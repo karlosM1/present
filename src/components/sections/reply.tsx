@@ -1,66 +1,76 @@
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/ui/marquee";
+import Reply1 from "./reply1.png";
+import Reply3 from "./reply3.png";
+import Reply4 from "./reply4.png";
+import Reply6 from "./reply6.jpg";
+import Reply7 from "./reply7.jpg";
+import Reply8 from "./reply8.jpg";
+import Reply9 from "./reply9.jpg";
+import Reply10 from "./reply10.jpg";
+import Reply11 from "./reply11.png";
+import Proile from "./tweet-profile.png";
 
 const reviews = [
   {
     name: "Karlos",
     username: "@karlos",
     body: "Happy Birthday! Hope your day is filled with joys and happiness.",
-    img: "/present/src/assets/tweet-profile.png",
+    img: { Proile },
   },
   {
     name: "dsiaefdf",
     username: "@fldfeg",
     body: "Wishing you a wonderful birthday and a year full of peace.",
-    img: "/present/src/assets/reply9.jpg",
+    img: { Reply9 },
   },
   {
     name: "Lee",
     username: "@lee",
     body: "Happy Birthday! May your day be calm, bright, and special.",
-    img: "/present/src/assets/reply11.png",
+    img: { Reply11 },
   },
   {
     name: "gtefwr",
     username: "@yerdreew",
     body: "Hope this birthday brings you warmth and smiles. Enjoy your day!",
-    img: "/present/src/assets/reply10.jpg",
+    img: { Reply10 },
   },
   {
     name: "カルロス",
     username: "@カルロス",
     body: "Happy Birthday! Here's to a day that feels just right.",
-    img: "/present/src/assets/reply4.png",
+    img: { Reply4 },
   },
   {
     name: "ミゲル",
     username: "@ミゲル",
     body: "Wishing you a birthday filled with small moments to treasure.",
-    img: "/present/src/assets/reply6.jpg",
+    img: { Reply6 },
   },
   {
     name: "セラーノ",
     username: "@セラーノ",
     body: "Happy Birthday! May your day be gentle and kind, just like you.",
-    img: "/present/src/assets/reply7.jpg",
+    img: { Reply7 },
   },
   {
     name: "Miguel",
     username: "@miguel",
     body: "Hope you feel loved and appreciated on your birthday.",
-    img: "/present/src/assets/reply1.png",
+    img: { Reply1 },
   },
   {
     name: "gfg",
     username: "@j54y45",
     body: "Happy Birthday! May today be a time to relax and enjoy.",
-    img: "/present/src/assets/reply9.jpg",
+    img: { Reply8 },
   },
   {
     name: "Serrano",
     username: "@serrano",
     body: "Wishing you a birthday that’s simple, sweet, and meaningful.",
-    img: "/present/src/assets/reply3.png",
+    img: { Reply3 },
   },
 ];
 
@@ -73,11 +83,37 @@ const ReviewCard = ({
   username,
   body,
 }: {
-  img: string;
+  img:
+    | string
+    | Partial<{
+        Reply1: string;
+        Reply7: string;
+        Reply9: string;
+        Reply3: string;
+        Reply4: string;
+        Reply6: string;
+        Reply8: string;
+        Reply10: string;
+        Reply11: string;
+        Proile: string;
+      }>;
   name: string;
   username: string;
   body: string;
 }) => {
+  const imgSrc =
+    typeof img === "object"
+      ? img.Reply1 ||
+        img.Reply7 ||
+        img.Reply9 ||
+        img.Reply3 ||
+        img.Reply4 ||
+        img.Reply6 ||
+        img.Reply8 ||
+        img.Reply10 ||
+        img.Reply11 ||
+        img.Proile
+      : img;
   return (
     <figure
       className={cn(
@@ -94,7 +130,7 @@ const ReviewCard = ({
           width="32"
           height="32"
           alt=""
-          src={img}
+          src={imgSrc}
         />
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium dark:text-white">

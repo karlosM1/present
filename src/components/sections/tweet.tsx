@@ -1,6 +1,13 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import Profile from "./tweet-profile.png";
+import Image1 from "./image1.jpg";
+import Image2 from "./image2.jpg";
+import Image3 from "./image3.jpg";
+import Image4 from "./image4.jpg";
+import Image5 from "./image5.jpg";
 
 export const TwitterCard = () => {
+  const images = [Image1, Image2, Image3, Image4, Image5];
   return (
     <Card className="w-full sm:w-[300px] md:w-[500px] lg:w-[500px]">
       <CardHeader className="flex flex-row justify-between tracking-tight">
@@ -10,7 +17,7 @@ export const TwitterCard = () => {
             alt="Karlos"
             height={48}
             width={48}
-            src="/present/src/assets/tweet-profile.png"
+            src={Profile}
             className="overflow-hidden rounded-full border border-transparent w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
           />
           <div>
@@ -66,7 +73,7 @@ export const TwitterCard = () => {
             {Array.from({ length: 5 }).map((_, index) => (
               <img
                 key={index}
-                src={`/present/src/assets/image${index + 1}.jpg`}
+                src={images[index]}
                 title={"Photo by " + `${index + 1}`}
                 alt={`Image ${index + 1}`}
                 className="h-64 w-5/6 shrink-0 snap-center snap-always rounded-xl border object-cover shadow-sm "
