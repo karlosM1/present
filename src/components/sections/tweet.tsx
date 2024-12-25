@@ -10,7 +10,7 @@ export const TwitterCard = () => {
             alt="Karlos"
             height={48}
             width={48}
-            src="./src/assets/tweet-profile.png"
+            src="./assets/tweet-profile.png"
             className="overflow-hidden rounded-full border border-transparent w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
           />
           <div>
@@ -66,7 +66,7 @@ export const TwitterCard = () => {
             {Array.from({ length: 5 }).map((_, index) => (
               <img
                 key={index}
-                src={`./src/assets/image${index + 1}.jpg`}
+                src={`./assets/image${index + 1}.jpg`}
                 title={"Photo by " + `${index + 1}`}
                 alt={`Image ${index + 1}`}
                 className="h-64 w-5/6 shrink-0 snap-center snap-always rounded-xl border object-cover shadow-sm "
